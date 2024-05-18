@@ -7,21 +7,20 @@ export default function page() {
   const [Title, seTitle] = useState("www.mulpuriganesh.com");
   const [text, setText] = useState("JAI BALAYYA");
   const [answer, setAnswer] = useState("JAI GANESH SAI!!");
-  const data = {
-    "QuestionID": "1",
-    "Company":{
-      "CompanyID": "1",
-        "Name": "Google",
-          "Url": "www.google.com"
-
+  const [passData,setPassData]=useState({
+    QuestionId:"1",
+    Company:{
+      CompanyID:"1",
+      Name:"gOOGLE",
+      Url:"www.google.com"
     },
-    "Title": "question",
-    "Text": "question text",
-    "Answer": "answer for the question ",
-};
+    Title:"question",
+    Text:"question text",
+    Answer:"answer for the question",
+  });
 const handleClick = async () => {
   try {
-    const response = await addQuestion(data);
+    const response = await addQuestion(passData);
     console.log("this works");
     console.log(response);
   } catch (error) {
