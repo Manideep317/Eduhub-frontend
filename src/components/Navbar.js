@@ -18,13 +18,13 @@ export default function Navbar() {
                             <div className="text-2xl font-medium">Eduhub</div>
                         </div>
                         <div className="min-w-[30%] flex justify-between">
-                            <Link className='p-3 text-xl font-medium rounded-md hover:font-bold hover:scale-105 hover:underline' href="/">Features</Link>
-                            <Link className='p-3 text-xl font-medium rounded-md hover:font-bold hover:scale-105 hover:underline' href="/">About us</Link>
+                            <Link className='p-3 text-xl font-medium rounded-md hover:font-bold hover:scale-105 hover:underline' href="/#features">Features</Link>
+                            <Link className='p-3 text-xl font-medium rounded-md hover:font-bold hover:scale-105 hover:underline' href="/#aboutus">About us</Link>
                             <Link className='p-3 text-xl font-medium rounded-md hover:font-bold hover:scale-105 hover:underline ' href="/">Future</Link>
                             <Link className='p-3 text-xl font-medium rounded-md hover:font-bold hover:scale-105 hover:underline' href="/">Services</Link>
                         </div>
                         <div className="">
-                            <Link href="/" className='bg-black p-3 text-white rounded-md font-medium'>Login</Link>
+                            <Link href="/login" className='bg-black p-3 text-white rounded-md font-medium'>Login</Link>
                         </div>     
                     </div>
 
