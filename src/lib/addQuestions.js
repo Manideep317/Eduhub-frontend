@@ -1,14 +1,18 @@
-export default async function addQuestion({data}){
-    const response = fetch("http://localhost:8080/question/createQuestion",{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json",
-        },
-        body:JSON.stringify(data)
-    });
-    if(!response.ok){
-        const errorDetails=(await response).json();
-        throw new Error(response);
+import axios from "axios";
+
+export default async function addQuestion({ data }) {
+  try {
+    const response = await axios.post("http://localhost:8080/question/createQuestion", data);
+
+    if (response.status !== 200) {
+      const errorDetails = response.data;
+      console.log(errorDetails);
+      throw new Error(`Error: ${response.status} - ${errorDetails}`);
     }
-    return response.json();
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw new Error(`Request failed: ${error.message}`);
+  }
 }

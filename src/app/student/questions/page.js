@@ -9,18 +9,17 @@ export default function page() {
   const [answer, setAnswer] = useState("JAI GANESH SAI!!");
   const data = {
     "QuestionID": "1",
-      "Company":{
+    "Company":{
       "CompanyID": "1",
         "Name": "Google",
           "Url": "www.google.com"
 
     },
     "Title": "question",
-      "Text": "question text",
-        "Answer": "answer for the question ",
+    "Text": "question text",
+    "Answer": "answer for the question ",
 };
-const handleClick = async (e) => {
-  e.preventDefault();
+const handleClick = async () => {
   try {
     const response = await addQuestion(data);
     console.log("this works");
