@@ -1,19 +1,9 @@
-"use client"
-import React,{useState,useEffect} from 'react'
 import MobileNavbar from './MobileNavbar';
 import Link from 'next/link'
 export default function Navbar() {
-    const [pageWidth, setPageWidth] = useState(window.screen.width);
-
-    useEffect(() => {
-        setPageWidth(window.screen.width);
-        console.log(window.screen.width);
-    }, [window]);
     return (
         <header className='py-[1rem] z-50 top-0 flex items-center px-[1.5rem] fixed min-w-full bg-white text-black'>
-            {
-                pageWidth > 850 ? (
-                    <div className="flex justify-between items-center w-full">
+                    <div className="flex max-md:hidden justify-between items-center w-full">
                         <div className="flex items-center">
                             <div className="text-2xl font-medium">Eduhub</div>
                         </div>
@@ -27,12 +17,9 @@ export default function Navbar() {
                             <Link href="/login" className='bg-black p-3 text-white rounded-md font-medium'>Login</Link>
                         </div>     
                     </div>
-
-                ) : (
-                    <MobileNavbar />
-                )
-            }
-
+                    <div className="w-full md:hidden">
+                        <MobileNavbar/>
+                    </div>
         </header>
     )
 }
