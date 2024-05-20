@@ -2,7 +2,10 @@
 import React, { useState } from "react";
 import Modal from "../_components/Modal";
 import getCompanies from "@/lib/getCompanies";
-export default function Page() {
+export default async function Page() {
+  const companies=await fetch("http://localhost:8080/company/Getallcompanies");
+  console.log(companies);
+  
   const [data, setData] = useState({
     CompanyID: "Y",
     Name: "google",
@@ -14,9 +17,6 @@ export default function Page() {
     console.log(modal);
     setModal(true);
   };
-
-  
-
   return (
     <main className="w-full bg-white">
       <button
@@ -27,7 +27,9 @@ export default function Page() {
       </button>
       {modal&&<Modal onClose={()=>setModal(false)} />}
       <div className="my-[1rem]">
+        {
 
+        }
       </div>
     </main>
   );
