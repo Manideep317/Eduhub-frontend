@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function addQuestion({ data }) {
+export default async function addQuestion( data ) {
   try {
     const response = await axios.post("http://localhost:8080/question/createQuestion", data).then((response)=>{
       console.log(response);

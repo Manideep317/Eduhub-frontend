@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import Modal from "../_components/CompanyModal";
 import getCompanies from "@/lib/getCompanies";
-export default async function Page() {
-  const companies=await fetch("http://localhost:8080/company/Getallcompanies");
-  console.log(companies);
+export default  function Page() {
+  // const companies=await fetch("http://localhost:8080/company/Getallcompanies");
+  // console.log(companies);
   
   const [data, setData] = useState({
     CompanyID: "Y",

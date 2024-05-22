@@ -19,7 +19,7 @@ export default function Page() {
       {modal&&<Modal onClose={()=>setModal(false)} />}
       <div className="my-[1rem]">
         {
-
+      
         }
       </div>
     </main>
