@@ -2,22 +2,6 @@
 import addQuestion from "@/lib/addQuestions"
 import { useEffect, useState } from "react"
 export default function page() {
-  const [QuestionId, useQuestionId] = useState("1");
-  const [Company, useCompany] = useState("ganesh bhai");
-  const [Title, seTitle] = useState("www.mulpuriganesh.com");
-  const [text, setText] = useState("JAI BALAYYA");
-  const [answer, setAnswer] = useState("JAI GANESH SAI!!");
-  const [passData,setPassData]=useState({
-    QuestionId:"1",
-    Company:{
-      CompanyID:"1",
-      Name:"gOOGLE",
-      Url:"www.google.com"
-    },
-    Title:"question",
-    Text:"question text",
-    Answer:"answer for the question",
-  });
 const handleClick = async () => {
   try {
     const response = await addQuestion(passData);
