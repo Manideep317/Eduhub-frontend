@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Modal from "../_components/QuestionsModal";
+import Question from "../_components/Question";
 export default function Page() {
   const [modal, setModal] = useState(false);
 
@@ -18,9 +19,7 @@ export default function Page() {
       </button>
       {modal&&<Modal onClose={()=>setModal(false)} />}
       <div className="my-[1rem]">
-        {
-      
-        }
+        <Question/>
       </div>
     </main>
   );

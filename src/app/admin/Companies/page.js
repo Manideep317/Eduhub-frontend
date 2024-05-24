@@ -7,11 +7,7 @@ export default function Page() {
   // const companies=await fetch("http://localhost:8080/company/Getallcompanies");
   // console.log(companies);
   
-  const [data, setData] = useState({
-    CompanyID: "Y",
-    Name: "google",
-    Url: "www.google.com"
-  });
+  
   const [modal, setModal] = useState(false);
 
   function handleClick(){

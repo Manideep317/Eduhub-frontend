@@ -21,14 +21,20 @@ export default function Companies() {
     fetchCompanies();
   }, []);
 
+  const transformedCompanies = companies.map(companyArray => {
+    const companyObject = {};
+    companyArray.forEach(({ Key, Value }) => {
+      companyObject[Key] = Value;
+    });
+    return companyObject;
+  });
+
   return (
     <div className="w-full grid place-items-center text-center">
       <div className="grid place-items-center max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-x-[1rem] justify-between">
-        {
-          companies.map((data, id) => (
-            <Company key={id} {...data} />
-          ))
-        }
+      {transformedCompanies.map((company, id) => (
+        <Company key={id} {...company} />
+      ))}
       </div>
     </div>
   );
